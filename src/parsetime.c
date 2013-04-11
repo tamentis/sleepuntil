@@ -42,11 +42,12 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include <tzfile.h>
 #include <unistd.h>
-
-// #include "globals.h"
-// #include "at.h"
+#ifndef _LOCAL_TZ_FILE
+#include <tzfile.h>
+#else
+#include "tzfile.h"
+#endif
 
 const char ProgramName[] = "sleepuntil";
 
