@@ -3,7 +3,7 @@ BINARY=sleepuntil
 all:
 	make -C src/
 
-install: ${BINARY}
+install:
 	install -d -m 755 ${PREFIX}/bin
 	install -m 755 src/${BINARY} ${PREFIX}/bin
 	install -d -m 755 ${PREFIX}/${MANDEST}/man1
