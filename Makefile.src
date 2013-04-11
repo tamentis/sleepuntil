@@ -1,7 +1,7 @@
 BINARY=sleepuntil
 
 all:
-	make -C src/
+	cd src/ && make
 
 install: ${BINARY}
 	install -d -m 755 ${PREFIX}/bin
@@ -13,7 +13,7 @@ mantest:
 	nroff -man sleepuntil.1 | less -R
 
 clean:
-	make -C src/ clean
+	cd src/ && make clean
 
 README: sleepuntil.1
 	nroff -man sleepuntil.1 | col -b > README
