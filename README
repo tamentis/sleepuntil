@@ -1,0 +1,34 @@
+
+
+sleepuntil(1)		    User’s Reference Manual		 sleepuntil(1)
+
+NAME
+     sleepuntil — sleep until a given time
+
+SYNOPSIS
+     sleepuntil timespec
+
+DESCRIPTION
+     sleepuntil is a mix of sleep(1) and at(1). It takes the same format of
+     time as at(1), including "noon" or "teatime". Since it uses the parser
+     from at, you can refer to the at man page for the format.
+
+EXAMPLES
+      sleepuntil noon
+
+      sleepuntil 5:00 pm
+
+SEE ALSO
+     sleep(1), at(8),
+
+AUTHORS
+     sleepuntil was written by Bertrand Janin <b@janin.com> and is distributed
+     under an ISC license (BSD compatible, OSI compatible).
+
+     The time parsing functions are coming from OpenBSD’s at command, with the
+     following copyrights:
+
+      Copyright (C) 1993, 1994	Thomas Koenig
+      Copyright (C) 1993  David Parsons
+
+BSD				April 11, 2013				   BSD

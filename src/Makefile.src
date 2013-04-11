@@ -1,0 +1,17 @@
+BINARY=sleepuntil
+OBJECTS=main.o parsetime.o
+OBJECTS+=${EXTRA_OBJECTS}
+HEADERS=parsetime.h
+
+all: ${BINARY}
+
+${BINARY}: ${OBJECTS}
+	${CC} ${LDFLAGS} -o ${BINARY} ${OBJECTS}
+
+${OBJECTS}: ${HEADERS}
+
+ctags:
+	ctags *.c *.h
+
+clean:
+	rm -f ${BINARY} ${OBJECTS}
