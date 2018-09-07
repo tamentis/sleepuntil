@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # Configure script for 'sleepuntil'
-# Copyright (c) 2013 Bertrand Janin <b@janin.com>
+# Copyright (c) 2013-2018 Bertrand Janin <b@janin.com>
 #
 #
 
@@ -125,6 +125,7 @@ case $OS in
 		;;
 
 	*BSD)
+		X_CFLAGS="-D_LOCAL_TZ_FILE"
 		;;
 
 	Darwin)
