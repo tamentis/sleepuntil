@@ -17,7 +17,6 @@ sleepuntil 5:00 pm && sudo reboot
 
 ```
 sleepuntil(1)		    User’s Reference Manual		 sleepuntil(1)
-## Examples
 
 NAME
      sleepuntil — sleep until a given time
