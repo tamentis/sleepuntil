@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # Configure script for 'sleepuntil'
-# Copyright (c) 2013-2018 Bertrand Janin <b@janin.com>
+# Copyright (c) 2013-2025 Bertrand Janin <b@janin.com>
 #
 #
 
@@ -14,12 +14,6 @@ alias echo=/bin/echo
 
 # Some people run configure from their backyard
 cd "`dirname $0`"
-
-
-# Sad default, you can try CC=clang ./configure too
-if [ -z "$CC" ]; then
-	export CC=gcc
-fi
 
 
 # generate_makefile() - Generate the main Makefile
@@ -162,9 +156,20 @@ rm -f fake_makefile*
 
 # Check if we have a working cc
 echo -n "cc... "
+if [ -z "$CC" ]; then
+	for c in cc clang gcc; do
+		if command -v "$c" >/dev/null 2>&1; then
+			export CC=$c
+			break
+		fi
+	done
+	if [ -z "$CC" ]; then
+		export CC=gcc
+	fi
+fi
 cat <<EOF > fake_cc.c
 #include <stdio.h>
-main() { printf("woot\n"); }
+int main() { printf("hello world\n"); }
 EOF
 if ! ${CC} fake_cc.c -o /dev/null 1>/dev/null 2>/dev/null; then
 	stuff_not_found "No C compiler found (try to install gcc or clang)"

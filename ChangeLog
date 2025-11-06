@@ -1,6 +1,7 @@
 1.1 Bertrand Janin <b@janin.com> (unreleased)
 
-	* Compile without hacks on BSD too.
+	* Fix compilation on macOS and BSD.
+	* Try to automatically find a compiler instead of defaulting to gcc.
 
 1.0 Bertrand Janin <b@janin.com> (2013-04-11)
 
