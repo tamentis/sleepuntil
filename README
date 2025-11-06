@@ -1,6 +1,23 @@
+# sleepuntil - sleep until a given time
 
+[sleepuntil](https://tamentis.com/projects/sleepuntil/) is a mix of sleep(1)
+and at(1). It takes the same format of time as at(1), including "noon" or
+"teatime". Since it uses the parser from at, you can refer to the at man page
+for the format. The exit code is 0 upon completion, which allows you to run a
+program at the given time with `&&` in your shell.
 
+## Examples
+
+```
+sleepuntil noon && sendmail something
+sleepuntil 5:00 pm && sudo reboot
+```
+
+## Man page
+
+```
 sleepuntil(1)		    User’s Reference Manual		 sleepuntil(1)
+## Examples
 
 NAME
      sleepuntil — sleep until a given time
@@ -32,3 +49,4 @@ AUTHORS
       Copyright (C) 1993  David Parsons
 
 BSD				April 11, 2013				   BSD
+```

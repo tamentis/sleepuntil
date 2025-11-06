@@ -15,5 +15,5 @@ mantest:
 clean:
 	cd src/ && make clean
 
-README: sleepuntil.1
-	nroff -man sleepuntil.1 | col -b > README
+README.man: sleepuntil.1
+	nroff -man sleepuntil.1 | col -b > README.man
