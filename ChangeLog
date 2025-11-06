@@ -1,4 +1,4 @@
-1.1 Bertrand Janin <b@janin.com> (unreleased)
+1.1 Bertrand Janin <b@janin.com> (2025-11-06)
 
 	* Fix compilation on macOS and BSD.
 	* Try to automatically find a compiler instead of defaulting to gcc.
